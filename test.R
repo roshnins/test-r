@@ -37,9 +37,18 @@ glimpse(penguins)
 View(penguins) 
 # opens a new tab of spreadsheet
 
+##### SCATTER PLOT #######
 ggplot(
   data = penguins,
   mapping = aes(x = flipper_length_mm, y = body_mass_g)
 ) +
   geom_point()
+# bar charts use bar geoms (geom_bar()), line charts use line geoms (geom_line()), boxplots use boxplot geoms (geom_boxplot()), scatterplots use point geoms (geom_point()
 #> Warning: Removed 2 rows containing missing values (`geom_point()`).
+
+##### SCATTER PLOT WITH COLORS DIFF BY SPECIES #######
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)
+) +
+  geom_point()
