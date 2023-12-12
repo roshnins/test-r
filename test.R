@@ -76,3 +76,12 @@ ggplot(
     color = "Species", shape = "Species"
   ) +
   scale_color_colorblind()
+
+##### CONCISE GGPLOT CODE MTD 1 #######
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) + 
+  geom_point()
+
+##### CONCISE GGPLOT CODE MTD 2 (WITH PIPE) #######
+penguins |> 
+  ggplot(aes(x = flipper_length_mm, y = body_mass_g)) + 
+  geom_point()
