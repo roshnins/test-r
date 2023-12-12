@@ -52,3 +52,27 @@ ggplot(
   mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)
 ) +
   geom_point()
+
+##### SCATTER PLOT WITH COLORS&SHAPE DIFF BY SPECIES AND BEST FIT LINE #######
+##we want points to be colored based on species but don’t want the lines to be separated out for them, we should specify color = species for geom_point() only.
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g)
+) +
+  geom_point(mapping = aes(color = species, shape = species)) +
+  geom_smooth(method = "lm")
+
+##### FINAL PLOT WITH LABELS #######
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g)
+) +
+  geom_point(aes(color = species, shape = species)) +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Body mass and flipper length",
+    subtitle = "Dimensions for Adelie, Chinstrap, and Gentoo Penguins",
+    x = "Flipper length (mm)", y = "Body mass (g)",
+    color = "Species", shape = "Species"
+  ) +
+  scale_color_colorblind()
