@@ -36,6 +36,19 @@ AAPL[, c(1,4)]
 
 Renames col names
 ```{r}
+AAPL <- df
+colnames(AAPL) <- c("Open", "High", "Low", "Close", "Volume", "Adjusted")
 colnames(AAPL)
+```
+Save as csv
+```{r}
+write.csv(AAPL,"AAPL-Data.csv")
+read.csv("AAPL-Data.csv",row.names = 1)
+```
+
+Plot the adjusted close prices
+```{r}
+data <- AAPL
+plot(data[,"Adjusted"], type = 'l')
 ```
 
