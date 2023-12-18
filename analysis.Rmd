@@ -51,4 +51,7 @@ Plot the adjusted close prices
 data <- AAPL
 plot(data[,"Adjusted"], type = 'l')
 ```
+```{r}
+plot(data[,"Adjusted"])
+```
 
